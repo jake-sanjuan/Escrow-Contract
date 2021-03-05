@@ -9,13 +9,16 @@ describe('Escrow', () => {
     otherPartyAddress,
     escrow,
     deployTx,
-    receipt;
+    deployReceipt;
 
   before(async () =>{
 
     const Escrow = await ethers.getContractFactory('Escrow');
     escrow = await Escrow.deploy();
     await escrow.deployed();
+
+    tx = escrow.deployTransaction
+    receipt = await tx.wait();
 
     initiatorSigner = ethers.provider.getSigner(0);
     initiatorAddress = await initiatorSigner.getAddress();
@@ -27,8 +30,7 @@ describe('Escrow', () => {
 
   describe('upon deployment', () =>{
     before(async () => {
-      //tx = escrow.deployTransaction
-      //receipt = await tx.wait();
+
     });
 
     it('should set EscrowStage to ValueSetting (0)', async() => {
