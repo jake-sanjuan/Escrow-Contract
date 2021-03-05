@@ -17,8 +17,8 @@ describe('Escrow', () => {
     escrow = await Escrow.deploy();
     await escrow.deployed();
 
-    tx = escrow.deployTransaction
-    receipt = await tx.wait();
+    //tx = escrow.deployTransaction
+    //receipt = await tx.wait();
 
     initiatorSigner = ethers.provider.getSigner(0);
     initiatorAddress = await initiatorSigner.getAddress();
