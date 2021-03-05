@@ -43,7 +43,7 @@ describe('Escrow', () => {
 
     //it('should emit the event', async () =>{
     //  const eventEmitted = receipt.events.find(x => x.event === 'Deployed');
-      //assert(eventEmitted, 'Event not found.');
+    //  assert(eventEmitted, 'Event not found.');
     //});
 
     it('should not allow another party to be set', async () => {
@@ -85,7 +85,6 @@ describe('Escrow', () => {
       const event = receipt.events.find(x => x.event === "ValueChange");
       assert(event, "No event emitted!");
 
-      // FIGURE OUT ARGS VS TOPICS VS DATA IN LOGS, ETHERS DOCS CONFUSED
       describe('with arguments', () =>{
         it('should have a new value of 1', () => {
           assert.equal(event.args[0].toString(), ethers.utils.parseEther('1'));
