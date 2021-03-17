@@ -44,7 +44,6 @@ describe('Escrow', () => {
       assert.equal(initiatorAddress.toString(), await escrow.initiator());
     });
 
-<<<<<<< HEAD
     it('should emit the event', async () =>{
       const topic = escrow.interface.getEventTopic('Deployed');
       const tx = escrow.deployTransaction;
@@ -54,12 +53,6 @@ describe('Escrow', () => {
 
       assert.equal(deployedEvent.name, 'Deployed');
     });
-=======
-    //it('should emit the event', async () =>{
-    //  const eventEmitted = receipt.events.find(x => x.event === 'Deployed');
-    //  assert(eventEmitted, 'Event not found.');
-    //});
->>>>>>> b54505ca1cb96b413fa3ed711a5705cf1c4b1379
 
     it('should not allow another party to be set', async () => {
       let ex;
@@ -102,16 +95,9 @@ describe('Escrow', () => {
       assert(event, "No event emitted!");
     });
 
-<<<<<<< HEAD
     it('should have a new value of 1', () => {
       assert.equal(event.args.newValue.toString(), ethers.utils.parseEther('1'));
     });
-=======
-      describe('with arguments', () =>{
-        it('should have a new value of 1', () => {
-          assert.equal(event.args[0].toString(), ethers.utils.parseEther('1'));
-        });
->>>>>>> b54505ca1cb96b413fa3ed711a5705cf1c4b1379
 
     it('should have an old value of 0', () => {
       assert.equal(event.args.oldValue.toString(), '0');
