@@ -61,7 +61,7 @@ contract Escrow {
     value = _value;
     currentStage = EscrowStage.AddingOtherParty;
 
-    emit ValueChange(_value, value);
+    emit ValueChange(_value, value - _value);
   }
 
   function setOtherParty(address payable _otherParty) external onlyInitiator {
